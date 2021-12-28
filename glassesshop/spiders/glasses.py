@@ -21,11 +21,11 @@ class GlassesSpider(scrapy.Spider):
                 'User-Agent': response.request.headers['User-Agent']
                 
                 }
-            next_page = response.xpath(
-                "//lu[@class='pagination']/li[position()=last()]/a/@href").get()
-            if next_page:
-                yield scrapy.Request(url=next_page,callback=self.parse,headers={
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
-                    })
+        next_page = response.xpath(
+            "//lu[@class='pagination']/li[position()=last()]/a/@href").get()
+        if next_page:
+            yield scrapy.Request(url=next_page, callback=self.parse,headers={
+                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
+                })
 
             
