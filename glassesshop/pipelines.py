@@ -9,6 +9,11 @@ from itemadapter import ItemAdapter
 import logging
 
 class GlassesshopPipeline:
+    @classmethod
+    def from_crawler(cls,crawler):
+        logging.warning(crawler.settings.get("MONGO_URI"))
+        return cls()
+        
     def open_spider(self,spider):
         logging.warning("SPIDER OPENED FROM PIPELINE!")
     

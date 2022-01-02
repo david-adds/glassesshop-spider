@@ -65,6 +65,8 @@ ITEM_PIPELINES = {
    'glassesshop.pipelines.GlassesshopPipeline': 300,
 }
 
+MONGO_URI = "Hey There!"
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
