@@ -18,8 +18,7 @@ class GlassesSpider(scrapy.Spider):
                 'image_url': glasses_.xpath(".//img[@class='lazy d-block w-100 product-img-default']/@src").get(),
                 'product_name': glasses_.xpath("normalize-space(.//div[@class='p-title']/a/text())").get(),
                 'price': glasses_.xpath(".//div[@class='p-price']//span/text()").get(),
-                'User-Agent': response.request.headers['User-Agent']
-                
+                # 'User-Agent': response.request.headers['User-Agent']
                 }
         next_page = response.xpath(
             "//lu[@class='pagination']/li[position()=last()]/a/@href").get()

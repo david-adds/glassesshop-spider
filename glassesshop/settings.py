@@ -62,10 +62,10 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'glassesshop.pipelines.GlassesshopPipeline': 300,
-}
+#    'glassesshop.pipelines.MongodbPipeline': 300,
+   'glassesshop.pipelines.SQLlitePipeline': 300,
 
-MONGO_URI = "Hey There!"
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
