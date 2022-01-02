@@ -26,21 +26,24 @@
 #         return item
 import sqlite3
 
-class SQLlitePipeline(object):
+class SQLitePipeline:
         
     def open_spider(self,spider):
         self.connection = sqlite3.connect('glassesshop.db')
         self.c = self.connection.cursor()
-        self.c.execute(''' 
-                       CREATE TABLE glasses(
-                            url TEXT,
-                            image_url TEXT,
-                            product_name TEXT,
-                            price TEXT
-                       )
-                       '''
-                       )
-        self.connection.commit()
+        try:
+            self.c.execute(''' 
+                        CREATE TABLE glasses(
+                                url TEXT,
+                                image_url TEXT,
+                                product_name TEXT,
+                                price TEXT
+                        )
+                        '''
+                        )
+            self.connection.commit()
+        except sqlite3.OperationalError:
+            pass
         
     def close_spider(self,spider):
         self.client.close()

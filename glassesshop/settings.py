@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
 #    'glassesshop.pipelines.MongodbPipeline': 300,
-   'glassesshop.pipelines.SQLlitePipeline': 300,
+   'glassesshop.pipelines.SQLitePipeline': 300,
 
 }
 
